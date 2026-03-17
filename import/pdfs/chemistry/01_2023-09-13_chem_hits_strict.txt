@@ -1,0 +1,26 @@
+SDMA (EIA)
+Creatinine
+Urea (BUN)
+Sodium
+Chloride
+Potassium
+Inorganic Phosphate
+Total Bilirubin
+ALT (GPT)
+Alkaline phosphatase
+GGT
+AST (GOT)
+GLDH
+Total protein
+Albumin
+Globulin
+Glucose
+a-Amylase
+Lipase
+Cholesterol
+Fructosamine
+CK
+Calcium
+Magnesium
+Triglycerides
+CRP (C-reactive protein)

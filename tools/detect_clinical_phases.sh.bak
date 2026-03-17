@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SQLITE_DB="$HOME/projeto_daisy/database/daisy.db"
+
+echo
+echo "CLINICAL PHASE DETECTOR"
+echo "================================================"
+echo
+
+DATA=$(sqlite3 "$SQLITE_DB" -separator '|' "
+SELECT collection_date,creatinine_umol_L
+FROM chemistry
+WHERE creatinine_umol_L IS NOT NULL
+ORDER BY collection_date
+")
+
+BASELINE=$(echo "$DATA" | head -n 8 | awk -F'|' '{sum+=$2} END {print sum/NR}')
+
+AKI_THRESHOLD=$(echo "$BASELINE * 2.5" | bc -l)
+
+echo "Baseline creatinine estimate:"
+printf "%.2f umol/L\n" "$BASELINE"
+
+echo
+echo "Phase detection"
+echo "------------------------------------------------"
+
+PHASE="BASELINE"
+
+echo "$DATA" | while IFS='|' read DATE VALUE
+do
+
+if (( $(echo "$VALUE > $AKI_THRESHOLD" | bc -l) )); then
+
+    if [[ "$PHASE" != "AKI" ]]; then
+        echo
+        echo "Phase: AKI EVENT"
+        echo "Start: $DATE"
+        PHASE="AKI"
+    fi
+
+elif [[ "$PHASE" == "AKI" ]]; then
+
+    if (( $(echo "$VALUE < $AKI_THRESHOLD" | bc -l) )); then
+        echo
+        echo "Phase: RECOVERY"
+        echo "Start: $DATE"
+        PHASE="RECOVERY"
+    fi
+
+elif [[ "$PHASE" == "RECOVERY" ]]; then
+
+    STABLE_THRESHOLD=$(echo "$BASELINE * 1.5" | bc -l)
+
+    if (( $(echo "$VALUE < $STABLE_THRESHOLD" | bc -l) )); then
+        echo
+        echo "Phase: POST-AKI STABILIZATION"
+        echo "Start: $DATE"
+        PHASE="STABLE"
+    fi
+
+fi
+
+done
+
+echo
+echo "Phase detection complete"

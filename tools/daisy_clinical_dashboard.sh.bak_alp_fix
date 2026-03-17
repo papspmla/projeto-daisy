@@ -1,0 +1,258 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+TOOLS="$HOME/projeto_daisy/tools"
+DB="$HOME/projeto_daisy/database/daisy.db"
+
+get_last_line() {
+    local analyte="$1"
+    "$TOOLS/trend_chemistry_analyte.sh" "$analyte" | tail -n 1
+}
+
+get_status() {
+    local line="$1"
+    echo "$line" | awk '{print $NF}'
+}
+
+get_value() {
+    local line="$1"
+    echo "$line" | awk '{print $2}'
+}
+
+print_abnormal_if_needed() {
+    local label="$1"
+    local line="$2"
+    local status
+    local value
+    status=$(get_status "$line")
+    value=$(get_value "$line")
+
+    if [[ "$status" == "HIGH" || "$status" == "LOW" ]]; then
+        echo "$label: $value -> $status"
+    fi
+}
+
+phase_trend_label() {
+    local analyte="$1"
+    local current_status="$2"
+    local phase_start="$3"
+    local normal_label="$4"
+
+    local trend_text
+    local phase_lines
+    local phase_abnormal_count
+
+    trend_text=$("$TOOLS/trend_chemistry_analyte.sh" "$analyte")
+    phase_lines=$(echo "$trend_text" | awk -v start="$phase_start" '
+        /^[0-9]{4}-[0-9]{2}-[0-9]{2}/ {
+            if ($1 >= start) print
+        }
+    ')
+    phase_abnormal_count=$(echo "$phase_lines" | grep -Ec 'HIGH|LOW' || true)
+
+    if [[ "$current_status" == "HIGH" ]]; then
+        echo "currently high"
+    elif [[ "$current_status" == "LOW" ]]; then
+        echo "currently low"
+    elif [[ "$phase_abnormal_count" -eq 0 ]]; then
+        echo "$normal_label"
+    else
+        echo "historical fluctuation in current phase"
+    fi
+}
+
+simple_watch_label() {
+    local current_status="$1"
+    local trend_text="$2"
+
+    if [[ "$current_status" == "HIGH" ]]; then
+        echo "currently high"
+        return
+    elif [[ "$current_status" == "LOW" ]]; then
+        echo "currently low"
+        return
+    fi
+
+    if echo "$trend_text" | grep -q "HIGH"; then
+        local high_count
+        high_count=$(echo "$trend_text" | grep -c "HIGH")
+        if [[ "$high_count" -ge 2 ]]; then
+            echo "intermittent elevations"
+            return
+        fi
+    fi
+
+    echo "stable"
+}
+
+PHASE_DATA=$("$TOOLS/detect_clinical_phases.sh" | grep -E '^[A-Z_]+=')
+eval "$PHASE_DATA"
+
+EXAM_COUNT=$(sqlite3 "$DB" "SELECT COUNT(*) FROM chemistry;")
+LATEST_EXAM=$(sqlite3 "$DB" "SELECT MAX(collection_date) FROM chemistry;")
+
+CREAT_LAST=$(get_last_line creatinine_umol_L)
+SDMA_LAST=$(get_last_line sdma_ug_dL)
+PHOS_LAST=$(get_last_line phosphorus_mmol_L)
+UREA_LAST=$(get_last_line urea_mmol_L)
+K_LAST=$(get_last_line potassium_mmol_L)
+
+CA_LAST=$(get_last_line calcium_mmol_L)
+MG_LAST=$(get_last_line magnesium_mmol_L)
+NA_LAST=$(get_last_line sodium_mmol_L)
+CL_LAST=$(get_last_line chloride_mmol_L)
+TG_LAST=$(get_last_line triglycerides_mmol_L)
+ALT_LAST=$(get_last_line alt_U_L)
+AST_LAST=$(get_last_line ast_U_L)
+ALP_LAST=$(get_last_line alp_U_L)
+
+CREAT_STATUS=$(get_status "$CREAT_LAST")
+SDMA_STATUS=$(get_status "$SDMA_LAST")
+PHOS_STATUS=$(get_status "$PHOS_LAST")
+UREA_STATUS=$(get_status "$UREA_LAST")
+K_STATUS=$(get_status "$K_LAST")
+
+CA_STATUS=$(get_status "$CA_LAST")
+MG_STATUS=$(get_status "$MG_LAST")
+NA_STATUS=$(get_status "$NA_LAST")
+CL_STATUS=$(get_status "$CL_LAST")
+TG_STATUS=$(get_status "$TG_LAST")
+ALT_STATUS=$(get_status "$ALT_LAST")
+AST_STATUS=$(get_status "$AST_LAST")
+ALP_STATUS=$(get_status "$ALP_LAST")
+
+CHOL_TREND=$("$TOOLS/trend_chemistry_analyte.sh" cholesterol_mmol_L)
+TG_TREND=$("$TOOLS/trend_chemistry_analyte.sh" triglycerides_mmol_L)
+ALT_TREND=$("$TOOLS/trend_chemistry_analyte.sh" alt_U_L)
+ALP_TREND=$("$TOOLS/trend_chemistry_analyte.sh" alp_U_L)
+
+HAS_ABNORMALITIES=0
+for status in \
+    "$CREAT_STATUS" "$SDMA_STATUS" "$PHOS_STATUS" "$UREA_STATUS" "$K_STATUS" \
+    "$CA_STATUS" "$MG_STATUS" "$NA_STATUS" "$CL_STATUS" "$TG_STATUS" \
+    "$ALT_STATUS" "$AST_STATUS" "$ALP_STATUS"
+do
+    if [[ "$status" == "HIGH" || "$status" == "LOW" ]]; then
+        HAS_ABNORMALITIES=1
+        break
+    fi
+done
+
+echo "DAISY CLINICAL DASHBOARD"
+echo "================================================"
+echo
+
+echo "PROJECT / DATABASE STATUS"
+echo "------------------------------------------------"
+echo "SQLite database : $DB"
+echo "Chemistry exams : $EXAM_COUNT"
+echo "Latest exam     : $LATEST_EXAM"
+echo "Current phase   : $CURRENT_PHASE"
+echo
+
+echo "CLINICAL SUMMARY"
+echo "------------------------------------------------"
+"$TOOLS/clinical_summary.sh"
+echo
+
+echo "LATEST EXAM INTERPRETATION"
+echo "------------------------------------------------"
+"$TOOLS/interpret_chemistry_exam.sh" "$LATEST_EXAM"
+echo
+
+echo "RENAL PANEL TREND"
+echo "------------------------------------------------"
+"$TOOLS/trend_renal_panel.sh"
+echo
+
+echo "CLINICAL PHASE ENGINE"
+echo "------------------------------------------------"
+echo "Baseline creatinine : $BASELINE_UMOL_L umol/L"
+echo "AKI start           : $AKI_START"
+echo "Recovery start      : $RECOVERY_START"
+echo "Stabilization start : $STABILIZATION_START"
+echo "Current phase       : $CURRENT_PHASE"
+echo
+
+echo "CURRENT ABNORMALITIES SNAPSHOT"
+echo "------------------------------------------------"
+if [[ "$HAS_ABNORMALITIES" == "0" ]]; then
+    echo "None detected in monitored biomarkers."
+else
+    print_abnormal_if_needed "Creatinine" "$CREAT_LAST"
+    print_abnormal_if_needed "SDMA" "$SDMA_LAST"
+    print_abnormal_if_needed "Phosphorus" "$PHOS_LAST"
+    print_abnormal_if_needed "Urea" "$UREA_LAST"
+    print_abnormal_if_needed "Potassium" "$K_LAST"
+    print_abnormal_if_needed "Calcium" "$CA_LAST"
+    print_abnormal_if_needed "Magnesium" "$MG_LAST"
+    print_abnormal_if_needed "Sodium" "$NA_LAST"
+    print_abnormal_if_needed "Chloride" "$CL_LAST"
+    print_abnormal_if_needed "Triglycerides" "$TG_LAST"
+    print_abnormal_if_needed "ALT" "$ALT_LAST"
+    print_abnormal_if_needed "AST" "$AST_LAST"
+    print_abnormal_if_needed "ALP" "$ALP_LAST"
+fi
+echo
+
+echo "BIOMARKER WATCHLIST"
+echo "------------------------------------------------"
+echo "Creatinine plateau : $(phase_trend_label creatinine_umol_L "$CREAT_STATUS" "$STABILIZATION_START" "stable post-AKI")"
+echo "Urea               : $(phase_trend_label urea_mmol_L "$UREA_STATUS" "$STABILIZATION_START" "stable in current phase")"
+echo "SDMA               : $(phase_trend_label sdma_ug_dL "$SDMA_STATUS" "$RECOVERY_START" "stable since recovery")"
+echo "Phosphorus         : $(phase_trend_label phosphorus_mmol_L "$PHOS_STATUS" "$STABILIZATION_START" "stable")"
+echo "Potassium          : $(phase_trend_label potassium_mmol_L "$K_STATUS" "$STABILIZATION_START" "stable")"
+echo "Cholesterol        : $(simple_watch_label "NORMAL" "$CHOL_TREND")"
+echo "Triglycerides      : $(simple_watch_label "$TG_STATUS" "$TG_TREND")"
+echo "ALT                : $(simple_watch_label "$ALT_STATUS" "$ALT_TREND")"
+echo "ALP                : $(simple_watch_label "$ALP_STATUS" "$ALP_TREND")"
+echo
+
+echo "LONGITUDINAL FLAGS"
+echo "------------------------------------------------"
+if echo "$CHOL_TREND" | grep -q "HIGH"; then
+    echo "Cholesterol has shown intermittent elevations over time."
+else
+    echo "No longitudinal lipid abnormality detected."
+fi
+echo
+
+echo "FINAL AUTOMATIC IMPRESSION"
+echo "------------------------------------------------"
+
+if [[ "$CURRENT_PHASE" == "STABLE" && "$CREAT_STATUS" == "NORMAL" && "$SDMA_STATUS" == "NORMAL" ]]; then
+    echo "Renal function remains stable in the post-AKI period."
+    echo "No biochemical evidence of active renal injury."
+fi
+
+if [[ "$NA_STATUS" == "NORMAL" && "$K_STATUS" == "NORMAL" && "$CL_STATUS" == "NORMAL" ]]; then
+    echo "Electrolytes are stable."
+fi
+
+if [[ "$CA_STATUS" == "NORMAL" && "$MG_STATUS" == "NORMAL" ]]; then
+    echo "Mineral balance markers are within reference range."
+fi
+
+if [[ "$ALT_STATUS" == "NORMAL" && "$AST_STATUS" == "NORMAL" && "$ALP_STATUS" == "NORMAL" ]]; then
+    echo "Liver enzymes are within reference limits."
+fi
+
+if [[ "$TG_STATUS" == "NORMAL" ]]; then
+    echo "Triglycerides are currently within reference range."
+elif [[ "$TG_STATUS" == "HIGH" ]]; then
+    echo "Triglycerides are currently above reference range."
+elif [[ "$TG_STATUS" == "LOW" ]]; then
+    echo "Triglycerides are currently below reference range."
+fi
+
+if echo "$CHOL_TREND" | grep -q "HIGH"; then
+    echo "Cholesterol shows intermittent elevations historically."
+fi
+
+if [[ "$HAS_ABNORMALITIES" == "1" ]]; then
+    echo "Active out-of-range biomarkers are listed above."
+fi
+
+echo
+echo "Dashboard complete."

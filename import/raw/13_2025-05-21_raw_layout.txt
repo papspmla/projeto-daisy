@@ -1,0 +1,187 @@
+                               Vet Med Labor GmbH               Labor Kornwestheim          Labor Leipzig         069 153 253 290
+                               Division of IDEXX Laboratories   Humboldtstraße 2            Druckereistraße 4
+                               www.idexx.de                     70806 Kornwestheim          04159 Leipzig         laborservice@idexx.com
+
+ Account ID: VASV                                Pet-Owner:       Pereira Paulo                    Internal lab-number: LZ348577
+ VetCare Animal Clinic                           Animal name: Daisy                                Barcode number:      79241903
+ Dott. Victor Vassallo                           Species:         Canine                           Date of receipt:     21.05.2025
+ Misrah Lourdes                                  Gender:          F                                Material:            Serum, EDTA whole
+ SGN 2010 San Gwann                              Age:             5Y                                                    blood, Blood smear
+
+
+
+
+LAB REPORT:                     Daisy
+
+
+  TEST                                             RESULT                  REFERENCE VALUE
+  Hemolysis Index Photometry                       +                                                                                 1),2),3)
+
+  Lipemia Index Photometry                         Negative                                                                          1),4),3)
+
+
+
+material: Serum
+
+Large Check-up
+
+
+Check-up
+  Glucose                                          4.55                    3.16 - 6.99    mmol/L                                     1),3)
+
+  IDEXX SDMA™ EIA                                  23                      0 - 14         µg/dL        +                             3),5)
+
+  Creatinine                                       512.72                  44.2 - 132.6 µmol/L         +                             3)
+
+  Urea (BUN)                                       43.91                   3.21 - 10.35 mmol/L         +                             3)
+
+  Phosphate                                        3.9                     0.9 - 1.7      mmol/L       +                             3)
+
+  Calcium                                          2.6                     2.1 - 2.9      mmol/L                                     3)
+
+  Magnesium                                        1.2                     0.7 - 1.1      mmol/L       +                             3)
+  Sodium                                           143                     142 - 153      mmol/L                                     3)
+
+  Potassium                                        6.5                     3.9 - 5.8      mmol/L       +                             3)
+
+  Chloride                                         106                     106 - 120      mmol/L                                     3)
+
+  Total protein                                    67                      54 - 76        g/L                                        3)
+
+  Albumin                                          18                      28 - 43        g/L          -                             3)
+
+  Globulin                                         49                      24 - 43        g/L          +                             3)
+
+  ALT (GPT)                                        26                      25 - 122       U/L                                        3)
+
+  AST (GOT)                                        40                      14 - 59        U/L                                        3)
+
+  Alkaline phosphatase                             447                     14 - 147       U/L          +                             3)
+
+  GGT                                              <1                      2 - 13         U/L          -                             3)
+
+  GLDH                                             3                       1 - 18         U/L                                        3)
+
+  Bilirubin (total)                                6.84                    0 - 6.84       µmol/L                                     3)
+
+  Cholesterol                                      6.7                     3.59 - 10.29   mmol/L                                     3)
+
+  Triglycerides                                    0.72                    0.32 - 5.29    mmol/L                                     3)
+  a-amylase                                        779                     333 - 1264     U/L                                        3)
+
+  Lipase                                           215                     0 - 250        U/L                                        3)
+
+  CK                                               450                     41 - 378       U/L          +                             3)
+
+
+
+  Report created on 26.05.2025 at 10:37 UTC                     Final report                                          Page 1 of 3
+                                 Vet Med Labor GmbH               Labor Kornwestheim             Labor Leipzig        069 153 253 290
+                                 Division of IDEXX Laboratories   Humboldtstraße 2               Druckereistraße 4
+                                 www.idexx.de                     70806 Kornwestheim             04159 Leipzig        laborservice@idexx.com
+
+Pet-Owner:       Pereira Paulo                         Animal name:   Daisy                                Internal lab-number: LZ348577
+
+
+
+
+   TEST                                                 RESULT                REFERENCE VALUE
+   Fructosamine                                         339                   177 - 314     µmol/L          +                           3)
+
+   CRP (C-reactive protein) Immunoturbidimetry          138.1                 0.0 - 10.7    mg/L            +                           3)
+
+
+
+material: EDTA whole blood
+
+Blood count, small
+   Erythrocytes                                         5.59                  5.4 - 8.7     x10^12/L                                    3)
+
+   Haematocrit                                          0.397                 0.383 - 0.565 L/L                                         3)
+
+   Haemoglobin concentration                            129                   134 - 207     g/L             -                           3)
+
+   MCV                                                  71.0                  59.0 - 76.0   fL                                          3)
+   MCH                                                  23.1                  21.9 - 26.1   pg                                          3)
+
+   MCHC                                                 325                   326 - 392     g/L             -                           3)
+
+   Leukocytes                                           46.35                 4.9 - 17.6    x10^9/L         +                           3)
+   Thrombocytes                                         149                   143 - 448     x10^9/L                                     3)
+
+
+Differential blood count
+       The leucocyte differential count was performed by the machine and verified microscopically. No abnormalites
+       detected.
+   Segmented neutrophils                                90.2                                %                                           3)
+   Lymphocytes                                          4.8                                 %                                           3)
+   Monocytes                                            4.1                                 %                                           3)
+
+   Eosinophils                                          0.8                                 %                                           3)
+
+   Basophils                                            0.1                                 %                                           3)
+
+   Segmented neutrophils (absolute)                     41.81                 2.94 - 12.67 x10^9/L          +                           3)
+   Lymphocytes (absolute)                               2.22                  1.06 - 4.95   x10^9/L                                     3)
+
+   Monocytes (absolute)                                 1.9                   0.13 - 1.15   x10^9/L         +                           3)
+   Eosinophils (absolute)                               0.37                  0.07 - 1.49   x10^9/L                                     3)
+
+   Basophils (absolute)                                 0.05                  0 - 0.1       x10^9/L                                     3)
+
+
+Reticulocytes
+   Reticulocytes (relative)                             0.8                                 %                                           3)
+
+   Reticulocytes (absolute)                             44.72                               K/µL                                        3)
+       Degree of bone marrow response (Reticulocytes K/µl):
+
+                 < 110,0 Normal if nonanaemic
+                 < 110,0 Inadequate if anaemic
+                 110,0 - 150,0 Mild regeneration
+                 150,0 - 300,0 Moderate regeneration
+                 > 300,0 Marked regeneration
+   Reticulocyte haemoglobin                             23.2                  24.5 - 31.8   pg              -                           3)
+
+
+
+
+   Report created on 26.05.2025 at 10:37 UTC                      Final report                                            Page 2 of 3
+                                                                 Vet Med Labor GmbH                   Labor Kornwestheim          Labor Leipzig              069 153 253 290
+                                                                 Division of IDEXX Laboratories       Humboldtstraße 2            Druckereistraße 4
+                                                                 www.idexx.de                         70806 Kornwestheim          04159 Leipzig              laborservice@idexx.com
+
+                               Pet-Owner:      Pereira Paulo                          Animal name:        Daisy                               Internal lab-number: LZ348577
+
+
+
+
+                                   Interpretation and comments:
+                                   1) The result has been double-checked.
+                                   2) The level of haemolysis of the specimen shows no significant impact on the analysis of clinical-chemical parameters.
+                                   3) Location Leipzig (not accredited)
+                                   4) The level of lipaemia of the specimen has no significant impact on the analysis of the clinical-chemical parameters.
+                                   5) Both SDMA and creatinine are increased which indicates kidney disease is probable and action should be taken. A complete urinalysis should be
+                                   performed to evaluate for inappropriate urine specific gravity, proteinuria or other evidence of kidney disease. For information on recommended actions
+                                   visit: www.idexx.com/SDMAalgorithm
+
+                                   Note: In puppies, SDMA reference interval is 0-16 µg/dl and in kittens 0-14 µg/dl. SDMA Reference interval studies are underway for Greyhounds, and
+                                   results should be interpreted in light of other findings.
+
+
+
+                                   Validated by:
+                                   Nora Berghoff Dr. med. vet. Phd Dipl. ACVP (Clin.Path.)
+                                   Our printed reports are valid without signature.
+                                   All test analysis is performed in our Kornwestheim Laboratory and as such is included in the scope of accreditation unless otherwise indicated (DIN
+                                   EN ISO/IEC 17025, D-PL-13356-01-00).
+                                   All results apply to the received sample(s) and provided information.
+                                   Information regarding the precise date of the test performance are available on request.
+
+
+
+
+                                   Report created on 26.05.2025 at 10:37 UTC                          Final report                                               Page 3 of 3
+
+Powered by TCPDF (www.tcpdf.org)
+

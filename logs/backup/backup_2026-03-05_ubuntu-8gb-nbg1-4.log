@@ -1,0 +1,28 @@
+== Daisy Backup 시작 ==
+Date: 2026-03-05  Host: ubuntu-8gb-nbg1-4  DOW: 4
+Backup dir: /home/paulo/projeto_daisy/backups
+
+[1/5] SQLite backup (daily) ...
+SQLite integrity_check ...
+ok
+-rw------- 1 paulo paulo 112K Mar  5 03:17 /home/paulo/projeto_daisy/backups/daisy_sqlite_2026-03-05.db
+
+[2/5] Weekly items (Postgres + filesystem) ...
+Not Sunday -> skipping weekly backups.
+
+[3/5] Retention policy ...
+SQLite: delete > 30 days
+Postgres/filesystem: delete > 84 days (12 weeks)
+
+[4/5] Recent backups summary:
+total 20M
+-rw-rw-r-- 1 paulo paulo  20M Mar  4 14:58 daisy_filesystem_2026-03-04.tar.gz
+-rw-rw-r-- 1 paulo paulo 5.8K Mar  4 14:55 daisy_postgres_2026-03-04.sql
+-rw-r--r-- 1 paulo paulo  92K Feb 27 17:09 daisy_pre_pdf01_2026-02-28_2044.db
+-rw-r--r-- 1 paulo paulo 112K Mar  4 15:24 daisy_sqlite_2026-03-04.db
+-rw------- 1 paulo paulo  127 Mar  4 15:24 daisy_sqlite_2026-03-04.db.sha256
+-rw------- 1 paulo paulo 112K Mar  5 03:17 daisy_sqlite_2026-03-05.db
+-rw------- 1 paulo paulo  127 Mar  5 03:17 daisy_sqlite_2026-03-05.db.sha256
+
+[5/5] Done.
+Log: /home/paulo/projeto_daisy/logs/backup/backup_2026-03-05_ubuntu-8gb-nbg1-4.log

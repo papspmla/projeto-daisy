@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+TOOLS="$HOME/projeto_daisy/tools"
+
+PHASE_DATA=$("$TOOLS/detect_clinical_phases.sh" | grep -E '^[A-Z_]+=')
+eval "$PHASE_DATA"
+
+echo
+echo "CLINICAL SUMMARY"
+echo "================================"
+echo
+
+echo "Renal history"
+echo "-------------"
+echo "AKI detected: $AKI_START"
+echo "Recovery phase: $RECOVERY_START"
+echo "Post-AKI stabilization: $STABILIZATION_START"
+echo
+echo "Current phase: $CURRENT_PHASE"
+echo
+echo "Baseline creatinine: $BASELINE_UMOL_L µmol/L"
+echo
+
+echo "Current renal panel status"
+echo "---------------------------"
+
+CREAT_LAST=$("$TOOLS/trend_chemistry_analyte.sh" creatinine_umol_L | tail -n 1)
+SDMA_LAST=$("$TOOLS/trend_chemistry_analyte.sh" sdma_ug_dL | tail -n 1)
+PHOS_LAST=$("$TOOLS/trend_chemistry_analyte.sh" phosphorus_mmol_L | tail -n 1)
+UREA_LAST=$("$TOOLS/trend_chemistry_analyte.sh" urea_mmol_L | tail -n 1)
+K_LAST=$("$TOOLS/trend_chemistry_analyte.sh" potassium_mmol_L | tail -n 1)
+CHOL_TREND=$("$TOOLS/trend_chemistry_analyte.sh" cholesterol_mmol_L)
+
+echo "Creatinine : $CREAT_LAST"
+echo "SDMA       : $SDMA_LAST"
+echo "Phosphorus : $PHOS_LAST"
+echo "Urea       : $UREA_LAST"
+echo "Potassium  : $K_LAST"
+
+echo
+echo
+echo "Clinical interpretation"
+echo "-----------------------"
+
+CREAT_STATUS=$(echo "$CREAT_LAST" | awk '{print $NF}')
+SDMA_STATUS=$(echo "$SDMA_LAST" | awk '{print $NF}')
+
+if [[ "$CURRENT_PHASE" == "STABLE" && "$CREAT_STATUS" == "NORMAL" && "$SDMA_STATUS" == "NORMAL" ]]; then
+    echo "Renal function stable since AKI recovery."
+    echo "No progressive CKD pattern detected."
+fi
+
+if [[ "$CREAT_STATUS" == "HIGH" ]]; then
+    echo "Creatinine currently above reference range."
+fi
+
+if [[ "$SDMA_STATUS" == "HIGH" ]]; then
+    echo "SDMA currently above reference range."
+fi
+
+echo
+PHOS_STATUS=$(echo "$PHOS_LAST" | awk '{print $NF}')
+UREA_STATUS=$(echo "$UREA_LAST" | awk '{print $NF}')
+K_STATUS=$(echo "$K_LAST" | awk '{print $NF}')
+
+if [[ "$PHOS_STATUS" == "NORMAL" ]]; then
+    echo "Phosphorus currently within reference range."
+elif [[ "$PHOS_STATUS" == "HIGH" ]]; then
+    echo "Phosphorus currently above reference range."
+elif [[ "$PHOS_STATUS" == "LOW" ]]; then
+    echo "Phosphorus currently below reference range."
+fi
+
+if [[ "$UREA_STATUS" == "NORMAL" ]]; then
+    echo "Urea currently within reference range."
+elif [[ "$UREA_STATUS" == "HIGH" ]]; then
+    echo "Urea currently above reference range."
+elif [[ "$UREA_STATUS" == "LOW" ]]; then
+    echo "Urea currently below reference range."
+fi
+
+if [[ "$K_STATUS" == "NORMAL" ]]; then
+    echo "Potassium currently within reference range."
+elif [[ "$K_STATUS" == "HIGH" ]]; then
+    echo "Potassium currently above reference range."
+elif [[ "$K_STATUS" == "LOW" ]]; then
+    echo "Potassium currently below reference range."
+fi
+if echo "$CHOL_TREND" | grep -q "HIGH"; then
+    echo "Cholesterol intermittently elevated."
+fi
+
+echo

@@ -1,0 +1,62 @@
+package main
+
+import (
+	"fmt"
+	"os/exec"
+)
+
+func run(cmd string) {
+	c := exec.Command("bash", "-c", cmd)
+	out, err := c.CombinedOutput()
+
+	fmt.Println(string(out))
+
+	if err != nil {
+		fmt.Println("Error:", err)
+	}
+}
+
+func section(title string) {
+	fmt.Println()
+	fmt.Println("================================================")
+	fmt.Println(title)
+	fmt.Println("================================================")
+	fmt.Println()
+}
+
+func main() {
+	fmt.Println()
+	fmt.Println("DAISY CLINICAL REPORT")
+	fmt.Println("Generated automatically from longitudinal data")
+	fmt.Println()
+
+	section("CLINICAL PHASE DETECTION")
+	run("detect_clinical_phases")
+
+	section("RENAL FUNCTION MODEL")
+	run("renal_function_model")
+
+	section("RENAL INTERPRETATION")
+	run("renal_interpreter")
+
+	section("HEPATIC INTERPRETATION")
+	run("hepatic_interpreter")
+
+	section("BIOMARKER TREND ANALYSIS")
+	run("trend_analyzer")
+
+	section("CLINICAL ALERTS")
+	run("clinical_alerts")
+
+	section("CLINICAL CONSISTENCY ENGINE")
+	run("clinical_consistency_engine")
+
+	section("CLINICAL SUMMARY")
+	run("clinical_summary")
+
+	fmt.Println()
+	fmt.Println("================================================")
+	fmt.Println("Report complete")
+	fmt.Println("================================================")
+	fmt.Println()
+}

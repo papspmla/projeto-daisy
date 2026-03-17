@@ -1,0 +1,27 @@
+analyte,result,ref_range,unit
+SDMA (EIA),8,0 - 14,µg/dl
+Creatinine,97,44 - 133,umol/l
+Urea (BUN),4.3,3.2 - 10.3,mmol/l
+Sodium,149,142 - 153,mmol/l
+Chloride,110,106 - 120,mmol/l
+Potassium,4.5,3.9 - 5.8,mmol/l
+Inorganic Phosphate,1.3,0.9 - 1.7,mmol/l
+Total Bilirubin,6.8,0 - 6.8,umol/l
+ALT (GPT),53,25 - 122,U/l
+Alkaline phosphatase,65,14 - 147,U/l
+GGT,4,2 - 13,U/l
+AST (GOT),38,14 - 59,U/l
+GLDH,7,1 - 18,U/l
+Total protein,69,54 - 76,g/l
+Albumin,34,28 - 43,g/l
+Globulin,35,24 - 43,g/l
+Glucose,4.0,3.2 - 7.0,mmol/l
+a-Amylase,474,333 - 1264,U/l
+Lipase,77,0 - 250,U/l
+Cholesterol,7.3,3.6 - 10.3,mmol/l
+Fructosamine,246,177 - 314,umol/l
+CK,252,41 - 378,U/l
+Calcium,2.7,2.1 - 2.9,mmol/l
+Magnesium,0.8,0.7 - 1.1,mmol/l
+Triglycerides,0.9,0.3 - 5.3,mmol/l
+CRP (C-reactive protein),2.9,0 - 10.7,mg/l

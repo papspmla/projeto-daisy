@@ -1,0 +1,14 @@
+# Daisy root
+export DAISY_ROOT="$HOME/projeto_daisy"
+
+# Admin
+export DAISY_ADMIN="$DAISY_ROOT/00_admin"
+
+# Snapshots
+export DAISY_SNAPSHOTS="$DAISY_ADMIN/Snapshots"
+
+# Status files
+export DAISY_STATUS="$DAISY_ADMIN/Status_Daisy"
+
+# Database
+export DAISY_DB="$DAISY_ROOT/database/daisy.db"

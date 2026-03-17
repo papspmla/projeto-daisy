@@ -1,0 +1,45 @@
+== Daisy Backup 시작 ==
+Date: 2026-03-12  Host: ubuntu-8gb-nbg1-4  DOW: 4
+Backup dir: /home/paulo/projeto_daisy/backups
+
+[1/5] SQLite backup (daily) ...
+SQLite integrity_check ...
+ok
+-rw------- 1 paulo paulo 196K Mar 12 03:17 /home/paulo/projeto_daisy/backups/daisy_sqlite_2026-03-12.db
+
+[2/5] Weekly items (Postgres + filesystem) ...
+Not Sunday -> skipping weekly backups.
+
+[3/5] Retention policy ...
+SQLite: delete > 30 days
+Postgres/filesystem: delete > 84 days (12 weeks)
+
+[4/5] Recent backups summary:
+-rw-rw-r-- 1 paulo paulo 5.8K Mar  4 14:55 daisy_postgres_2026-03-04.sql
+-rw------- 1 paulo paulo  37K Mar  8 03:17 daisy_postgres_2026-03-08.sql
+-rw------- 1 paulo paulo  130 Mar  8 03:17 daisy_postgres_2026-03-08.sql.sha256
+-rw-r--r-- 1 paulo paulo  92K Feb 27 17:09 daisy_pre_pdf01_2026-02-28_2044.db
+-rw-r--r-- 1 paulo paulo 112K Mar  4 15:24 daisy_sqlite_2026-03-04.db
+-rw------- 1 paulo paulo  127 Mar  4 15:24 daisy_sqlite_2026-03-04.db.sha256
+-rw------- 1 paulo paulo 112K Mar  5 03:17 daisy_sqlite_2026-03-05.db
+-rw------- 1 paulo paulo  127 Mar  5 03:17 daisy_sqlite_2026-03-05.db.sha256
+-rw------- 1 paulo paulo 112K Mar  6 03:17 daisy_sqlite_2026-03-06.db
+-rw------- 1 paulo paulo  127 Mar  6 03:17 daisy_sqlite_2026-03-06.db.sha256
+-rw------- 1 paulo paulo 112K Mar  7 16:17 daisy_sqlite_2026-03-07.db
+-rw------- 1 paulo paulo  127 Mar  7 16:17 daisy_sqlite_2026-03-07.db.sha256
+-rw------- 1 paulo paulo 112K Mar  8 03:17 daisy_sqlite_2026-03-08.db
+-rw------- 1 paulo paulo  127 Mar  8 03:17 daisy_sqlite_2026-03-08.db.sha256
+-rw------- 1 paulo paulo 112K Mar  9 03:17 daisy_sqlite_2026-03-09.db
+-rw------- 1 paulo paulo  127 Mar  9 03:17 daisy_sqlite_2026-03-09.db.sha256
+-rw------- 1 paulo paulo 176K Mar 10 03:17 daisy_sqlite_2026-03-10.db
+-rw------- 1 paulo paulo  127 Mar 10 03:17 daisy_sqlite_2026-03-10.db.sha256
+-rw------- 1 paulo paulo 176K Mar 11 03:17 daisy_sqlite_2026-03-11.db
+-rw------- 1 paulo paulo  127 Mar 11 03:17 daisy_sqlite_2026-03-11.db.sha256
+-rw------- 1 paulo paulo 196K Mar 12 03:17 daisy_sqlite_2026-03-12.db
+-rw------- 1 paulo paulo  127 Mar 12 03:17 daisy_sqlite_2026-03-12.db.sha256
+-rw-r--r-- 1 paulo paulo 112K Mar  8 17:25 daisy_sqlite_manual_2026-03-08_1725.db
+drwxrwxr-x 2 paulo paulo 4.0K Mar 12 00:48 snapshots_2026-03-12
+-rw-rw-r-- 1 paulo paulo  62K Mar 12 00:46 status_daisy_2026-03-12.md
+
+[5/5] Done.
+Log: /home/paulo/projeto_daisy/logs/backup/backup_2026-03-12_ubuntu-8gb-nbg1-4.log

@@ -1,0 +1,13 @@
+--------------------------------------------------
+PDF: 09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+timestamp: 2026-03-05_204536
+--------------------------------------------------
+[1] pdftotext
+[2] detect collection_date
+date from SQLite: 2024-12-09
+[3] ingest_chem dry-run
+Parâmetros recebidos:
+DATE=2024-12-09
+RAW=/home/paulo/projeto_daisy/import/raw/2026-03-05_204536__09_-_IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf__raw.txt
+SOURCE=09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+MODE=dry

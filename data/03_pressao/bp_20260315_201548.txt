@@ -1,0 +1,14 @@
+BP Daisy
+
+Paciente: Daisy
+14/03/2026 12:40 AE oscilometrico recem acordada relaxada
+
+132 92 103
+128 89 99
+124 88 97
+121 86 95
+119 85 93
+118 84 92
+117 83 91
+
+

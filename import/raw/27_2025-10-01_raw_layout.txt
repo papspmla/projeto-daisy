@@ -1,0 +1,259 @@
+                                   Vet Med Labor GmbH                  Labor Kornwestheim      Labor Leipzig          069 153 253 290
+                                   Division of IDEXX Laboratories      Humboldtstraße 2        Druckereistraße 4
+                                   www.idexx.de                        70806 Kornwestheim      04159 Leipzig          laborservice@idexx.com
+
+  Account ID: ADAG                                   Pet-Owner:          Pereira                       Internal lab-number: 1000098602
+  Attending Vet:                                     Animal name: Daisy                                Barcode number:      79595075
+  Dr. Geoffrey Schembri Adami                        Species:            Canine                        Date of receipt:     01.10.2025
+  Animal Aid Vet Clinic                              Gender:             F                             Material:            Serum, EDTA whole
+  49 Oscar Zammit Street                             Age:                6Y                                                 blood, Blood smear,
+                                                                                                                            Urine (no additive)
+  MSD 1282 Msida
+
+
+LAB REPORT:                         Daisy
+
+
+   TEST                                                 RESULT                    REFERENCE VALUE
+   Hemolysis Index Photometry                           Negative                                                                         1),2)
+
+   Lipemia Index Photometry                             Negative                                                                         3),1)
+
+
+
+material: Urine (no additive)
+
+Urine Profile
+   IDEXX Cystatin B (Urine) Immunoturbidimetry          <50                       0 - 99      ng/mL                                      1),4)
+
+
+Urine analysis (Urine test strip/refractometry)                                                                                          5)
+   Colour                                               Light Yellow                                                                     1)
+
+   Transparency                                         Clear                                                                            1)
+
+   Spec. gravity Refractometry                          1016                      >1030                    -                             6),1)
+
+   Reaction: pH Urine Test Strip                        6.0                       5.5 - 7.5                                              1)
+   Protein Urine Test Strip                             Negative                                                                         1)
+
+   Glucose Urine Test Strip                             Negative                                                                         1)
+
+   Ketone bodies Urine Test Strip                       Negative                                                                         1)
+   Blood Urine Test Strip                               Negative                                                                         1)
+
+   Bilirubin Urine Test Strip                           Negative                                                                         1)
+   Urobilinogen Urine Test Strip                        Negative                                                                         1)
+
+   Nitrite Urine Test Strip                             Negative                                                                         1)
+
+
+Urine sediment (Microscopy)
+   Leucocytes Microscopy                                1-4                                   /HPF                                       1)
+
+   Erythrocytes Microscopy                              1-4                                   /HPF                                       1)
+
+   Bacteria Microscopy                                  Mild                                               +                             1)
+   Epithelial cells Microscopy                          ~                                                                                1)
+
+   Typ 1: Large round shaped epithelial cells           1-4                                   /HPF
+
+   Typ 2: Squamous epithelial cells                     1-4                                   /HPF
+
+   Casts Microscopy                                     None Seen                             /LPF                                       1)
+
+   Crystals Microscopy                                  None Seen                             /HPF                                       1)
+
+
+Protein/Creatinine ratio
+   Creatinine in urine                                  7708.48                               µmol/L                                     1)
+
+
+
+   Report created on 01.10.2025 at 04:44 UTC                           Final report                                       Page 1 of 4
+                              Vet Med Labor GmbH               Labor Kornwestheim          Labor Leipzig        069 153 253 290
+                              Division of IDEXX Laboratories   Humboldtstraße 2            Druckereistraße 4
+                              www.idexx.de                     70806 Kornwestheim          04159 Leipzig        laborservice@idexx.com
+
+Pet-Owner:       Pereira                         Animal name:     Daisy                              Internal lab-number: 1000098602
+
+
+
+
+   TEST                                            RESULT                 REFERENCE VALUE
+   Total protein in urine                          49.0                                  mg/L                                     1)
+   Protein/creatinine ratio                        0.06                   0.0 - 0.5                                               1)
+
+
+
+material: Serum
+
+Large Check-up
+
+
+Check-up
+   Glucose                                         4.39                   3.16 - 6.99    mmol/L                                   1)
+
+   IDEXX SDMA™ EIA                                 10                     0 - 14         µg/dL                                    7),1)
+
+   Creatinine                                      150.28                 44.2 - 132.6 µmol/L         +                           1)
+
+   Urea (BUN)                                      6.43                   3.21 - 10.35   mmol/L                                   1)
+   Phosphate                                       1.2                    0.9 - 1.7      mmol/L                                   1)
+   Calcium                                         2.6                    2.1 - 2.9      mmol/L                                   1)
+
+   Magnesium                                       0.7                    0.7 - 1.1      mmol/L                                   1)
+
+   Sodium                                          147                    142 - 153      mmol/L                                   1)
+   Potassium                                       5.2                    3.9 - 5.8      mmol/L                                   1)
+
+   Chloride                                        113                    106 - 120      mmol/L                                   1)
+
+   Total protein                                   64                     54 - 76        g/L                                      1)
+   Albumin                                         31                     28 - 43        g/L                                      1)
+   Globulin                                        33                     24 - 43        g/L                                      1)
+
+   ALT (GPT)                                       24                     25 - 122       U/L          -                           1)
+
+   AST (GOT)                                       41                     14 - 59        U/L                                      1)
+
+   Alkaline phosphatase                            56                     14 - 147       U/L                                      1)
+
+   GGT                                             3                      2 - 13         U/L                                      1)
+   GLDH                                            4                      1 - 18         U/L                                      1)
+
+   Bilirubin (total)                               5.13                   0 - 6.84       µmol/L                                   1)
+   Cholesterol                                     7.94                   3.59 - 10.29   mmol/L                                   1)
+
+   Triglycerides                                   0.67                   0.32 - 5.29    mmol/L                                   1)
+
+   a-amylase                                       597                    333 - 1264     U/L                                      1)
+
+   Lipase                                          94                     0 - 250        U/L                                      1)
+
+   CK                                              177                    41 - 378       U/L                                      1)
+   Fructosamine                                    272                    177 - 314      µmol/L                                   1)
+
+   CRP (C-reactive protein) Immunoturbidimetry     <7.0                   0.0 - 10.7     mg/L                                     1)
+
+
+
+material: EDTA whole blood
+
+Blood count, small
+   Erythrocytes                                    6.65                   5.4 - 8.7      x10^12/L                                 1)
+
+
+
+   Report created on 01.10.2025 at 04:44 UTC                   Final report                                         Page 2 of 4
+                                 Vet Med Labor GmbH                   Labor Kornwestheim            Labor Leipzig            069 153 253 290
+                                 Division of IDEXX Laboratories       Humboldtstraße 2              Druckereistraße 4
+                                 www.idexx.de                         70806 Kornwestheim            04159 Leipzig            laborservice@idexx.com
+
+Pet-Owner:       Pereira                               Animal name:      Daisy                                Internal lab-number: 1000098602
+
+
+
+
+   TEST                                                 RESULT                   REFERENCE VALUE
+   Haematocrit                                          0.451                    0.383 - 0.565 L/L                                             1)
+   Haemoglobin concentration                            153                      134 - 207     g/L                                             1)
+
+   MCV                                                  67.8                     59.0 - 76.0   fL                                              1)
+   MCH                                                  23.0                     21.9 - 26.1   pg                                              1)
+
+   MCHC                                                 339                      326 - 392     g/L                                             1)
+   Leukocytes                                           5.11                     4.9 - 17.6    x10^9/L                                         1)
+
+   Thrombocytes                                         241                      143 - 448     x10^9/L                                         1)
+
+
+Differential blood count
+   Segmented neutrophils                                48.6                                   %                                               1)
+
+   Lymphocytes                                          35.6                                   %                                               1)
+
+   Monocytes                                            7.6                                    %                                               1)
+   Eosinophils                                          8.0                                    %                                               1)
+
+   Basophils                                            0.2                                    %                                               1)
+
+   Segmented neutrophils (absolute)                     2.48                     2.94 - 12.67 x10^9/L          -                               1)
+   Lymphocytes (absolute)                               1.82                     1.06 - 4.95   x10^9/L                                         1)
+
+   Monocytes (absolute)                                 0.39                     0.13 - 1.15   x10^9/L                                         1)
+
+   Eosinophils (absolute)                               0.41                     0.07 - 1.49   x10^9/L                                         1)
+
+   Basophils (absolute)                                 0.01                     0 - 0.1       x10^9/L                                         1)
+
+
+Reticulocytes
+   Reticulocytes (relative)                             0.4                                    %                                               1)
+
+   Reticulocytes (absolute)                             26.6                                   K/µL                                            1)
+       Degree of bone marrow response (Reticulocytes K/µl):
+
+                 < 110,0 Normal if nonanaemic
+                 < 110,0 Inadequate if anaemic
+                 110,0 - 150,0 Mild regeneration
+                 150,0 - 300,0 Moderate regeneration
+                 > 300,0 Marked regeneration
+   Reticulocyte haemoglobin                             25.3                     24.5 - 31.8   pg                                              1)
+
+
+
+   Interpretation and comments:
+   1) Location Leipzig (not accredited)
+   2) The level of haemolysis in the specimen shows no significant impact on the analysis of clinical-chemical parameters.
+   3) The level of lipaemia of the specimen has no significant impact on the analysis of the clinical-chemical parameters.
+
+
+
+
+   Report created on 01.10.2025 at 04:44 UTC                         Final report                                                Page 3 of 4
+                                                                 Vet Med Labor GmbH                     Labor Kornwestheim          Labor Leipzig              069 153 253 290
+                                                                 Division of IDEXX Laboratories         Humboldtstraße 2            Druckereistraße 4
+                                                                 www.idexx.de                           70806 Kornwestheim          04159 Leipzig              laborservice@idexx.com
+
+                               Pet-Owner:      Pereira                                 Animal name:        Daisy                                 Internal lab-number: 1000098602
+
+
+
+                                   4) In a patient that presented unwell, a result that is <100 ng/mL suggests that active kidney injury is not present.
+
+                                   If an insult that may have caused kidney injury is suspected, rechecking functional kidney markers and cystatin B in 24-48 hours is recommended.
+
+                                   Additional diagnostics such as imaging, urine protein:creatinine ratio and urine culture with susceptibility may be helpful.
+
+                                   Note: Dehydration, subclinical illness, and certain medications (e.g., NSAIDS) may contribute to kidney injury.
+
+                                   Consider the risk/benefit of such medications in the overall management of the patient.
+
+                                   For more information on Cystatin B, visit www.idexx.com/cystatinB
+                                   5) Please note that due to storage and transport of the urine, the pH may shift to a more alkaline value and that crystalline structures may be altered.
+                                   6) In a stable water balance and electrolyte status, a specific gravity of > 1030 allows the assumption of sufficient renal concentration ability.
+                                   7) SDMA is within the reference interval and creatinine is increased. This combination of results is uncommon. Hemolysis, if present, can result in
+                                   decreased SDMA. SDMA and creatinine can both be affected by biologic and assay variability resulting in fluctuations around the upper end of the
+                                   reference interval. This can be seen with well-managed stable CKD and results will likely align as disease progresses. Creatinine can exceed the
+                                   reference interval in muscular dogs with normal kidney function. Creatinine can be artifactually increased postprandially. If kidney disease is still
+                                   suspected, a complete urinalysis should be performed on all patients to evaluate for inappropriate specific gravity, proteinuria or other evidence of
+                                   kidney disease.
+
+
+
+                                   Validated by:
+                                   Nora Berghoff Dr. med. vet. Phd Dipl. ACVP (Clin.Path.)
+                                   Our printed reports are valid without signature.
+                                   All test analysis is performed in our Kornwestheim Laboratory and as such is included in the scope of accreditation unless otherwise indicated (DIN
+                                   EN ISO/IEC 17025, D-PL-13356-01-00).
+                                   All results apply to the received sample(s) and provided information.
+                                   Information regarding the precise date of the test performance are available on request.
+
+
+
+
+                                   Report created on 01.10.2025 at 04:44 UTC                           Final report                                                 Page 4 of 4
+
+Powered by TCPDF (www.tcpdf.org)
+

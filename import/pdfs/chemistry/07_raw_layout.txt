@@ -1,0 +1,88 @@
+                                 Vet Med Labor GmbH                     Labor Kornwestheim          Labor Leipzig              069 153 253 290
+                                 Division of IDEXX Laboratories         Humboldtstraße 2            Druckereistraße 4
+                                 www.idexx.de                           70806 Kornwestheim          04159 Leipzig              laborservice@idexx.com
+
+  Account ID: ADAG                                     Pet-Owner:         Pereira                            Internal lab-number: LZ310404
+  Dr. Geoffrey Schembri Adami                          Animal name: Daisy                                    Barcode number:           73435420
+  Animal Aid Vet Clinic                                Species:           Canine                             Date of receipt:          12.07.2024
+  49 Oscar Zammit Street                               Gender:            F                                  Material:                 Separated serum
+  MSD 1282 Msida                                       Age:               5Y
+
+
+
+
+LAB REPORT:                        Daisy
+
+
+   TEST                                                  RESULT                    REFERENCE VALUE
+   Hemolysis Index Photometry                            Negative                                                                                    1),2)
+
+   Lipemia Index Photometry                              Negative                                                                                    3),1)
+
+
+
+material: Separated serum
+
+Thyroid Profile 1
+   T4 (total T4) EIA                                     <9.01                     12.87 - 51.48nmol/L            -                                  1),5)
+
+   Free T4 CLIA                                          <3.86                     7.72 - 47.62 pmol/L            -                                  1)
+
+  TSH, canine CLIA                                       2.45                      0.00 - 0.50    ng/mL           +                                  1)
+Your additional order:
+
+   TEST                                                  RESULT                    REFERENCE VALUE
+
+
+
+   Iodine ICP                                            103.0                                    µg/L                                               4)
+        Laboratory's own area of experience: 30-400 ug/l (mean 158 ug/l; median 88 ug/l)
+
+
+
+   Interpretation and comments:
+   1)
+
+
+   Location Leipzig (not accredited)
+   2)
+   The level of haemolysis in the specimen shows no significant impact on the analysis of clinical-chemical parameters.
+   3)
+   The level of lipaemia of the specimen has no significant impact on the analysis of the clinical-chemical parameters.
+   4)
+   Analytical method: ICP-MS
+   5)
+   Dogs with no clinical signs of hypothyroidism and results within the normal reference range are likely euthyroid. Dogs with low T4 concentrations may
+   be hypothyroid or "euthyroid sick". Occasionally, hypothyroid dogs can have T4 concentrations that are low normal. Dogs with clinical signs of
+   hypothyroidism and low or low normal T4 concentrations may be evaluated further by submission of canine TSH. A mildly elevated T4 concentration in
+   a clinically normal dog is likely variation of normal. Thyroid neoplasia is rare in dogs. For dogs on thyroid supplement, acceptable 4-6 hour post pill total
+   T4 concentrations generally fall within the higher end or slightly above the reference range.
+
+
+
+   Validated by:
+   Stefanie Schlemmer-Petters (Veterinarian)
+   Our printed reports are valid without signature.
+   All test analysis is performed in our Kornwestheim Laboratory and as such is included in the scope of accreditation unless otherwise indicated (DIN
+
+
+   Report created on 15.07.2024 at 11:18 UTC                           Final report                                                 Page 1 of 2
+                                                              Vet Med Labor GmbH                  Labor Kornwestheim   Labor Leipzig        069 153 253 290
+                                                              Division of IDEXX Laboratories      Humboldtstraße 2     Druckereistraße 4
+                                                              www.idexx.de                        70806 Kornwestheim   04159 Leipzig        laborservice@idexx.com
+
+                               Pet-Owner:     Pereira                             Animal name:        Daisy                      Internal lab-number: LZ310404
+
+
+
+                                 EN ISO/IEC 17025, D-PL-13356-01-00).
+                            All results apply to the received sample(s) and provided information.
+                            Information regarding the precise date of the test performance are available on request.
+
+
+
+
+                                   Report created on 15.07.2024 at 11:18 UTC                      Final report                                  Page 2 of 2
+
+Powered by TCPDF (www.tcpdf.org)
+

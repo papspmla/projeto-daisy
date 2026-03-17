@@ -1,0 +1,131 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"os/exec"
+	"sort"
+	"strings"
+)
+
+type TrendDetail struct {
+	Trend    string  `json:"trend"`
+	FirstAvg float64 `json:"first_avg"`
+	LastAvg  float64 `json:"last_avg"`
+	Delta    float64 `json:"delta"`
+}
+
+type ClinicalFlags struct {
+	RenalCompensationStable bool `json:"renal_compensation_stable"`
+	ProgressiveCKDPattern   bool `json:"progressive_ckd_pattern"`
+	ElectrolytesPreserved   bool `json:"electrolytes_preserved"`
+	HepaticActivePattern    bool `json:"hepatic_active_pattern"`
+	MetabolicInstability    bool `json:"metabolic_instability"`
+	AKIHistoryPresent       bool `json:"aki_history_present"`
+}
+
+type ClinicalSummary struct {
+	RenalSummary     string   `json:"renal_summary"`
+	HepaticSummary   string   `json:"hepatic_summary"`
+	MetabolicSummary string   `json:"metabolic_summary"`
+	OverallFlags     []string `json:"overall_flags"`
+}
+
+func run(cmd string) []byte {
+	c := exec.Command("bash", "-c", cmd)
+	out, _ := c.Output()
+	return out
+}
+
+func main() {
+	trendRaw := run("trend_analyzer")
+	flagsRaw := run("clinical_flags_engine")
+
+	var trends map[string]TrendDetail
+	_ = json.Unmarshal(trendRaw, &trends)
+
+	var flags ClinicalFlags
+	_ = json.Unmarshal(flagsRaw, &flags)
+
+	summary := buildClinicalSummary(trends, flags)
+
+	jsonOutput, _ := json.MarshalIndent(summary, "", "  ")
+	fmt.Println(string(jsonOutput))
+}
+
+func buildClinicalSummary(trends map[string]TrendDetail, flags ClinicalFlags) ClinicalSummary {
+	renalParts := []string{}
+	hepaticParts := []string{}
+	metabolicParts := []string{}
+	overall := []string{}
+
+	if t, ok := trends["creatinine_umol_L"]; ok {
+		renalParts = append(renalParts,
+			fmt.Sprintf("creatinine %s from %.2f to %.2f", t.Trend, t.FirstAvg, t.LastAvg))
+	}
+	if t, ok := trends["sdma_ug_dL"]; ok {
+		renalParts = append(renalParts,
+			fmt.Sprintf("SDMA %s from %.2f to %.2f", t.Trend, t.FirstAvg, t.LastAvg))
+	}
+	if t, ok := trends["phosphorus_mmol_L"]; ok {
+		renalParts = append(renalParts, fmt.Sprintf("phosphorus %s", t.Trend))
+	}
+	if t, ok := trends["potassium_mmol_L"]; ok {
+		renalParts = append(renalParts, fmt.Sprintf("potassium %s", t.Trend))
+	}
+
+	if t, ok := trends["alt_U_L"]; ok {
+		hepaticParts = append(hepaticParts, fmt.Sprintf("ALT %s", t.Trend))
+	}
+	if t, ok := trends["alp_U_L"]; ok {
+		hepaticParts = append(hepaticParts, fmt.Sprintf("ALP %s", t.Trend))
+	}
+	if t, ok := trends["bilirubin_total_umol_L"]; ok {
+		hepaticParts = append(hepaticParts, fmt.Sprintf("bilirubin %s", t.Trend))
+	}
+
+	if t, ok := trends["cholesterol_mmol_L"]; ok {
+		metabolicParts = append(metabolicParts, fmt.Sprintf("cholesterol %s", t.Trend))
+	}
+	if t, ok := trends["triglycerides_mmol_L"]; ok {
+		metabolicParts = append(metabolicParts, fmt.Sprintf("triglycerides %s", t.Trend))
+	}
+	if t, ok := trends["glucose_mmol_L"]; ok {
+		metabolicParts = append(metabolicParts, fmt.Sprintf("glucose %s", t.Trend))
+	}
+
+	if flags.AKIHistoryPresent {
+		overall = append(overall, "AKI history present")
+	}
+	if flags.RenalCompensationStable {
+		overall = append(overall, "renal function stable after AKI recovery")
+	}
+	if !flags.ProgressiveCKDPattern {
+		overall = append(overall, "no progressive CKD pattern detected")
+	}
+	if flags.ElectrolytesPreserved {
+		overall = append(overall, "electrolytes stable")
+	}
+	if flags.HepaticActivePattern {
+		overall = append(overall, "possible active hepatic pattern")
+	}
+	if flags.MetabolicInstability {
+		overall = append(overall, "possible metabolic instability")
+	}
+
+	sort.Strings(overall)
+
+	return ClinicalSummary{
+		RenalSummary:     joinOrNA(renalParts),
+		HepaticSummary:   joinOrNA(hepaticParts),
+		MetabolicSummary: joinOrNA(metabolicParts),
+		OverallFlags:     overall,
+	}
+}
+
+func joinOrNA(parts []string) string {
+	if len(parts) == 0 {
+		return "no relevant data"
+	}
+	return strings.Join(parts, ", ")
+}

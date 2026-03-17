@@ -1,0 +1,31 @@
+{
+  "exam_date": "2026-02-12",
+  "lab_id": 1,
+  "species": "canine",
+  "analytes": [
+    {"analyte":"glucose_mmol_L","value":4.72,"unit":"mmol/L","min":4.11,"max":7.94,"class":"NORMAL"},
+    {"analyte":"sdma_ug_dL","value":12.0,"unit":"ug/dL","min":0,"max":14,"class":"NORMAL"},
+    {"analyte":"creatinine_umol_L","value":123.76,"unit":"umol/L","min":44,"max":141,"class":"NORMAL"},
+    {"analyte":"urea_mmol_L","value":5.71,"unit":"mmol/L","min":2.5,"max":9.6,"class":"NORMAL"},
+    {"analyte":"phosphorus_mmol_L","value":1.2,"unit":"mmol/L","min":0.81,"max":2.19,"class":"NORMAL"},
+    {"analyte":"calcium_mmol_L","value":2.6,"unit":"mmol/L","min":1.98,"max":3.00,"class":"NORMAL"},
+    {"analyte":"magnesium_mmol_L","value":0.7,"unit":"mmol/L","min":0.58,"max":0.99,"class":"NORMAL"},
+    {"analyte":"sodium_mmol_L","value":150.0,"unit":"mmol/L","min":144,"max":160,"class":"NORMAL"},
+    {"analyte":"potassium_mmol_L","value":4.9,"unit":"mmol/L","min":3.5,"max":5.8,"class":"NORMAL"},
+    {"analyte":"chloride_mmol_L","value":115.0,"unit":"mmol/L","min":109,"max":122,"class":"NORMAL"},
+    {"analyte":"total_protein_g_L","value":67.0,"unit":"g/L","min":52,"max":82,"class":"NORMAL"},
+    {"analyte":"albumin_g_L","value":31.0,"unit":"g/L","min":23,"max":40,"class":"NORMAL"},
+    {"analyte":"globulin_g_L","value":36.0,"unit":"g/L","min":25,"max":45,"class":"NORMAL"},
+    {"analyte":"alt_U_L","value":21.0,"unit":"U/L","min":10,"max":125,"class":"NORMAL"},
+    {"analyte":"ast_U_L","value":29.0,"unit":"U/L","min":0,"max":50,"class":"NORMAL"},
+    {"analyte":"alp_U_L","value":90.0,"unit":"U/L","min":23,"max":212,"class":"NORMAL"},
+    {"analyte":"ggt_U_L","value":3.0,"unit":"U/L","min":0,"max":11,"class":"NORMAL"},
+    {"analyte":"gldh_U_L","value":3.0,"unit":"U/L","min":1,"max":18,"class":"NORMAL"},
+    {"analyte":"bilirubin_total_umol_L","value":5.13,"unit":"umol/L","min":0,"max":15,"class":"NORMAL"},
+    {"analyte":"cholesterol_mmol_L","value":8.2,"unit":"mmol/L","min":2.84,"max":8.27,"class":"NORMAL"},
+    {"analyte":"triglycerides_mmol_L","value":0.71,"unit":"mmol/L","min":0.11,"max":1.13,"class":"NORMAL"},
+    {"analyte":"lipase_U_L","value":93.0,"unit":"U/L","min":200,"max":1800,"class":"LOW"},
+    {"analyte":"ck_U_L","value":82.0,"unit":"U/L","min":10,"max":200,"class":"NORMAL"},
+    {"analyte":"fructosamine_umol_L","value":302.0,"unit":"umol/L","min":177,"max":314,"class":"NORMAL"}
+  ]
+}

@@ -1,0 +1,194 @@
+                                Vet Med Labor GmbH               Labor Kornwestheim          Labor Leipzig         069 153 253 290
+                                Division of IDEXX Laboratories   Humboldtstraße 2            Druckereistraße 4
+                                www.idexx.de                     70806 Kornwestheim          04159 Leipzig         laborservice@idexx.com
+
+  Account ID: ADAG                                Pet-Owner:       Pereira, Paolo Antonio           Internal lab-number: LZ293298
+  Dr. Geoffrey Schembri Adami                     Animal name: Daisy                                Barcode number:      73435407
+  Animal Aid Vet Clinic                           Species:         Canine                           Date of receipt:     05.07.2024
+  49 Oscar Zammit Street                          Gender:          F                                Material:            Separated serum,
+  MSD 1282 Msida                                  Age:             4Y                                                    EDTA whole blood,
+                                                                                                                         Blood smear
+
+
+
+LAB REPORT:                      Daisy
+
+
+   TEST                                             RESULT                  REFERENCE VALUE
+   Hemolysis Index Photometry                       Negative                                                                          1),2)
+
+   Lipemia Index Photometry                         Negative                                                                          3),2)
+
+
+
+material: Separated serum
+
+Geriatric Profile
+   T4 (total T4) EIA                                10.3                    12.87 - 51.48nmol/L         -                             4),2)
+
+
+Check-up
+   Glucose                                          3.72                    3.16 - 6.99    mmol/L                                     2)
+
+   IDEXX SDMA™ EIA                                  9                       0 - 14         µg/dL                                      5),2)
+
+   Creatinine                                       114.92                  44.2 - 132.6   µmol/L                                     2)
+   Urea (BUN)                                       6.07                    3.21 - 10.35   mmol/L                                     2)
+
+   Phosphate                                        1.1                     0.9 - 1.7      mmol/L                                     2)
+   Calcium                                          2.5                     2.1 - 2.9      mmol/L                                     2)
+   Magnesium                                        0.7                     0.7 - 1.1      mmol/L                                     2)
+
+   Sodium                                           145                     142 - 153      mmol/L                                     2)
+
+   Potassium                                        5.3                     3.9 - 5.8      mmol/L                                     2)
+
+   Chloride                                         111                     106 - 120      mmol/L                                     2)
+
+   Total protein                                    72                      54 - 76        g/L                                        2)
+   Albumin                                          30                      28 - 43        g/L                                        2)
+
+   Globulin                                         42                      24 - 43        g/L                                        2)
+
+   ALT (GPT)                                        45                      25 - 122       U/L                                        2)
+   AST (GOT)                                        54                      14 - 59        U/L                                        2)
+
+   Alkaline phosphatase                             79                      14 - 147       U/L                                        2)
+
+   GGT                                              5                       2 - 13         U/L                                        2)
+
+   GLDH                                             5                       1 - 18         U/L                                        2)
+
+   Bilirubin (total)                                6.84                    0 - 6.84       µmol/L                                     2)
+
+   Cholesterol                                      11.2                    3.59 - 10.29 mmol/L         +                             2)
+   Triglycerides                                    1.03                    0.32 - 5.29    mmol/L                                     2)
+
+   a-amylase                                        360                     333 - 1264     U/L                                        2)
+
+   Lipase                                           77                      0 - 250        U/L                                        2)
+
+
+
+   Report created on 05.07.2024 at 05:42                         Final report                                          Page 1 of 3
+                                 Vet Med Labor GmbH               Labor Kornwestheim              Labor Leipzig        069 153 253 290
+                                 Division of IDEXX Laboratories   Humboldtstraße 2                Druckereistraße 4
+                                 www.idexx.de                     70806 Kornwestheim              04159 Leipzig        laborservice@idexx.com
+
+Pet-Owner:       Pereira, Paolo Antonio                Animal name:   Daisy                                 Internal lab-number: LZ293298
+
+
+
+
+   TEST                                                 RESULT                REFERENCE VALUE
+   CK                                                   377                   41 - 378       U/L                                         2)
+
+   Fructosamine                                         290                   177 - 314      µmol/L                                      2)
+
+   CRP (C-reactive protein) Immunoturbidometric         3.2                   0.0 - 10.7     mg/L                                        2)
+
+
+
+material: EDTA whole blood
+
+Blood count, small
+   Erythrocytes                                         6.83                  5.4 - 8.7      x10^12/L                                    2)
+
+   Haematocrit                                          0.444                 0.383 - 0.565 L/L                                          2)
+
+   Haemoglobin concentration                            162                   134 - 207      g/L                                         2)
+   MCV                                                  65.0                  59.0 - 76.0    fL                                          2)
+   MCH                                                  23.7                  21.9 - 26.1    pg                                          2)
+
+   MCHC                                                 365                   326 - 392      g/L                                         2)
+   Leukocytes                                           6.46                  4.9 - 17.6     x10^9/L                                     2)
+
+   Thrombocytes                                         132                   143 - 448      x10^9/L         -                           2)
+
+
+Differential blood count
+   Segmented neutrophils                                51.5                                 %                                           2)
+
+   Lymphocytes                                          36.7                                 %                                           2)
+   Monocytes                                            5.9                                  %                                           2)
+
+   Eosinophils                                          5.7                                  %                                           2)
+
+   Basophils                                            0.2                                  %                                           2)
+   Segmented neutrophils (absolute)                     3.33                  2.94 - 12.67   x10^9/L                                     2)
+
+   Lymphocytes (absolute)                               2.37                  1.06 - 4.95    x10^9/L                                     2)
+
+   Monocytes (absolute)                                 0.38                  0.13 - 1.15    x10^9/L                                     2)
+
+   Eosinophils (absolute)                               0.37                  0.07 - 1.49    x10^9/L                                     2)
+
+   Basophils (absolute)                                 0.01                  0 - 0.1        x10^9/L                                     6),2)
+
+
+Reticulocytes
+   Reticulocytes (relative)                             0.4                                  %                                           2)
+
+   Reticulocytes (absolute)                             27.32                                K/µL                                        2)
+        Degree of bone marrow response (Reticulocytes K/µl):
+
+                 < 110,0 Normal if nonanaemic
+                 < 110,0 Inadequate if anaemic
+                 110,0 - 150,0 Mild regeneration
+                 150,0 - 300,0 Moderate regeneration
+                 > 300,0 Marked regeneration
+   Reticulocyte haemoglobin                             27.0                  24.5 - 31.8    pg                                          2)
+
+
+
+
+   Report created on 05.07.2024 at 05:42                          Final report                                             Page 2 of 3
+                                                                 Vet Med Labor GmbH                     Labor Kornwestheim          Labor Leipzig              069 153 253 290
+                                                                 Division of IDEXX Laboratories         Humboldtstraße 2            Druckereistraße 4
+                                                                 www.idexx.de                           70806 Kornwestheim          04159 Leipzig              laborservice@idexx.com
+
+                               Pet-Owner:      Pereira, Paolo Antonio                  Animal name:        Daisy                                Internal lab-number: LZ293298
+
+
+
+
+                                   Interpretation and comments:
+                                   1)
+                                   The level of haemolysis in the specimen shows no significant impact on the analysis of clinical-chemical parameters.
+                                   2)
+
+
+                                   Location Leipzig (not accredited)
+                                   3)
+                                   The level of lipaemia of the specimen has no significant impact on the analysis of the clinical-chemical parameters.
+                                   4)
+                                   Dogs with no clinical signs of hypothyroidism and results within the normal reference range are likely euthyroid. Dogs with low T4 concentrations may
+                                   be hypothyroid or "euthyroid sick". Occasionally, hypothyroid dogs can have T4 concentrations that are low normal. Dogs with clinical signs of
+                                   hypothyroidism and low or low normal T4 concentrations may be evaluated further by submission of canine TSH. A mildly elevated T4 concentration in
+                                   a clinically normal dog is likely variation of normal. Thyroid neoplasia is rare in dogs. For dogs on thyroid supplement, acceptable 4-6 hour post pill total
+                                   T4 concentrations generally fall within the higher end or slightly above the reference range.
+                                   5)
+
+
+                                   Both SDMA and creatinine are not increased which indicates kidney function is likely good. Evaluate a complete urinalysis and confirm there is no other
+                                   evidence of kidney disease.
+                                   6)
+                                   Basophils up to 0.2 K/µL (0.2x10^9/L) are considered normal in the literature.
+
+
+
+                                   Validated by:
+                                   Nora Berghoff Dr. med. vet. Phd Dipl. ACVP (Clin.Path.)
+                                   Our printed reports are valid without signature.
+                                   All test analysis is performed in our Kornwestheim Laboratory and as such is included in the scope of accreditation unless otherwise indicated (DIN
+                                   EN ISO/IEC 17025, D-PL-13356-01-00).
+                                   All results apply to the received sample(s) and provided information.
+                                   Information regarding the precise date of the test performance are available on request.
+
+
+
+
+                                   Report created on 05.07.2024 at 05:42                               Final report                                                 Page 3 of 3
+
+Powered by TCPDF (www.tcpdf.org)
+

@@ -1,0 +1,13 @@
+------------------------------------------------------------
+industrial_ingest_chem.sh
+timestamp: 2026-03-05_200714
+pdf_path:  /home/paulo/projeto_daisy/import/pdfs/chemistry/09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+pdf_name:  09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+------------------------------------------------------------
+[1/5] pdftotext -layout -> /home/paulo/projeto_daisy/import/raw/2026-03-05_200714__09_-_IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf__raw_layout.txt
+[2/5] detect collection_date from raw_layout
+collection_date detected: 2024-12-10
+[3/5] ingest_chem.sh --dry-run (2024-12-10)
+Uso:
+  ingest_chem.sh --date YYYY-MM-DD --raw RAW_FILE --source PDF_NAME --dry-run
+  ingest_chem.sh --date YYYY-MM-DD --raw RAW_FILE --source PDF_NAME --run

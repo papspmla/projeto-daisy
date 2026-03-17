@@ -1,0 +1,27 @@
+--------------------------------------------------
+industrial_ingest_chem.sh
+timestamp: 2026-03-05_204945
+pdf: 09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+--------------------------------------------------
+[1] pdftotext -layout -> raw
+[2] detect collection_date
+date from SQLite (authoritative): 2024-12-09
+[3] ingest_chem.sh --dry-run
+Parâmetros recebidos:
+DATE=2024-12-09
+RAW=/home/paulo/projeto_daisy/import/raw/2026-03-05_204945__09_-_IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf__raw.txt
+SOURCE=09 - IDEXX_SangueCompleto_T4_T4Livre_09_12_2024.pdf
+MODE=dry
+ERRO: collection_date já existe em chemistry: 2024-12-09
+SKIP: chemistry already has collection_date=2024-12-09 (no --run needed)
+[5] Postgres documents (insert if missing)
+documents: OK
+[6] chunks
+BEGIN
+DELETE 8
+INSERT 0 8
+COMMIT
+OK: chunks chemistry v1.0 gerados para 2024-12-09 (document_id=8)
+--------------------------------------------------
+DONE: 2024-12-09
+LOG:  /home/paulo/projeto_daisy/logs/industrial_ingest/ingest_2026-03-05_204945.log

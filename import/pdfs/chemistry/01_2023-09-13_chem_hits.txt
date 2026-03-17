@@ -1,0 +1,29 @@
+SDMA (EIA)
+Creatinine
+Urea (BUN)
+Sodium
+Chloride
+Potassium
+Inorganic Phosphate
+Total Bilirubin
+ALT (GPT)
+Alkaline phosphatase
+GGT
+AST (GOT)
+GLDH
+Total protein
+Albumin
+Globulin
+Glucose
+a-Amylase
+Lipase
+Cholesterol
+Cholesterol (fasting dogs with regular body weight): < 7.8 mmol/l
+Fructosamine
+CK
+Calcium
+Magnesium
+Triglycerides
+Triglycerides (fasting dogs with regular body weight): 0.3 - 1.7 mmol/l
+CRP (C-reactive protein)
+Both SDMA and creatinine are not increased which indicates kidney

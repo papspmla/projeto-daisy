@@ -1,0 +1,294 @@
+package main
+
+import (
+	"bufio"
+	"database/sql"
+	"flag"
+	"fmt"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+
+	_ "github.com/mattn/go-sqlite3"
+)
+
+type BPRecord struct {
+	CollectionDate string
+	CollectionTime *string
+	Systolic       float64
+	Diastolic      float64
+	MAP            float64
+	Source         string
+	PatientID      int
+}
+
+type TempRecord struct {
+	CollectionDate string
+	CollectionTime *string
+	TemperatureC   float64
+	Context        *string
+	Source         string
+	PatientID      int
+}
+
+func main() {
+	dbPath := flag.String("db", "database/daisy.db", "SQLite database path")
+	filePath := flag.String("file", "", "input TXT file")
+	module := flag.String("module", "", "module: temperature | bp_legacy | bp_session")
+	patientID := flag.Int("patient", 1, "patient_id")
+	flag.Parse()
+
+	if *filePath == "" {
+		fmt.Println("missing -file")
+		return
+	}
+	if *module == "" {
+		fmt.Println("missing -module")
+		return
+	}
+
+	db, err := sql.Open("sqlite3", *dbPath)
+	if err != nil {
+		panic(err)
+	}
+	defer db.Close()
+
+	switch *module {
+	case "temperature":
+		count, err := ingestTemperature(db, *filePath, *patientID)
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf("temperature records inserted: %d\n", count)
+
+	case "bp_legacy":
+		count, err := ingestBPLegacy(db, *filePath, *patientID)
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf("bp_legacy records inserted: %d\n", count)
+
+	default:
+		fmt.Println("invalid -module (use temperature or bp_legacy)")
+	}
+}
+
+func ingestTemperature(db *sql.DB, filePath string, patientID int) (int, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return 0, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	inserted := 0
+
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if line == "" {
+			continue
+		}
+
+		rec, ok, err := parseTemperatureLine(line, patientID)
+		if err != nil {
+			return inserted, err
+		}
+		if !ok {
+			continue
+		}
+
+		res, err := db.Exec(`
+			INSERT OR IGNORE INTO temperature
+			(collection_date, collection_time, temperature_c, context, source, patient_id)
+			VALUES (?, ?, ?, ?, ?, ?)
+		`,
+			rec.CollectionDate,
+			rec.CollectionTime,
+			rec.TemperatureC,
+			rec.Context,
+			rec.Source,
+			rec.PatientID,
+		)
+		if err != nil {
+			return inserted, err
+		}
+
+		rows, err := res.RowsAffected()
+		if err != nil {
+			return inserted, err
+		}
+		inserted += int(rows)
+	}
+
+	if err := scanner.Err(); err != nil {
+		return inserted, err
+	}
+
+	return inserted, nil
+}
+
+func parseTemperatureLine(line string, patientID int) (TempRecord, bool, error) {
+	lower := strings.ToLower(line)
+	if strings.Contains(lower, "data") || strings.Contains(lower, "temperatura") {
+		return TempRecord{}, false, nil
+	}
+
+	line = strings.ReplaceAll(line, "*", "")
+	fields := strings.Fields(line)
+	if len(fields) < 3 {
+		return TempRecord{}, false, nil
+	}
+
+	dateStr := fields[0]
+	timeStr := fields[1]
+	tempStr := normalizeDecimal(fields[2])
+
+	date, err := time.Parse("02/01/2006", dateStr)
+	if err != nil {
+		return TempRecord{}, false, nil
+	}
+
+	_, err = time.Parse("15:04", timeStr)
+	if err != nil {
+		return TempRecord{}, false, nil
+	}
+
+	temp, err := strconv.ParseFloat(tempStr, 64)
+	if err != nil {
+		return TempRecord{}, false, nil
+	}
+
+	var context *string
+	if len(fields) > 3 {
+		c := strings.Join(fields[3:], " ")
+		context = &c
+	}
+
+	t := timeStr
+
+	return TempRecord{
+		CollectionDate: date.Format("2006-01-02"),
+		CollectionTime: &t,
+		TemperatureC:   temp,
+		Context:        context,
+		Source:         "txt_ingest",
+		PatientID:      patientID,
+	}, true, nil
+}
+
+func ingestBPLegacy(db *sql.DB, filePath string, patientID int) (int, error) {
+	file, err := os.Open(filePath)
+	if err != nil {
+		return 0, err
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	inserted := 0
+
+	for scanner.Scan() {
+		line := strings.TrimSpace(scanner.Text())
+		if line == "" {
+			continue
+		}
+
+		rec, ok, err := parseBPLegacyLine(line, patientID)
+		if err != nil {
+			return inserted, err
+		}
+		if !ok {
+			continue
+		}
+
+		res, err := db.Exec(`
+			INSERT OR IGNORE INTO blood_pressure
+			(collection_date, collection_time, systolic_mmHg, diastolic_mmHg, map_mmHg, heart_rate_bpm, body_position, measurement_site, condition, source, notes, patient_id)
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+		`,
+			rec.CollectionDate,
+			rec.CollectionTime,
+			rec.Systolic,
+			rec.Diastolic,
+			rec.MAP,
+			nil,
+			nil,
+			nil,
+			nil,
+			rec.Source,
+			nil,
+			rec.PatientID,
+		)
+		if err != nil {
+			return inserted, err
+		}
+
+		rows, err := res.RowsAffected()
+		if err != nil {
+			return inserted, err
+		}
+		inserted += int(rows)
+	}
+
+	if err := scanner.Err(); err != nil {
+		return inserted, err
+	}
+
+	return inserted, nil
+}
+
+func parseBPLegacyLine(line string, patientID int) (BPRecord, bool, error) {
+	lower := strings.ToLower(line)
+	if strings.Contains(lower, "pa daisy") ||
+		strings.Contains(lower, "sistólica") ||
+		strings.Contains(lower, "diastólica") ||
+		strings.Contains(lower, "map") {
+		return BPRecord{}, false, nil
+	}
+
+	fields := strings.Fields(line)
+	if len(fields) < 5 {
+		return BPRecord{}, false, nil
+	}
+
+	// Formato esperado:
+	// Nº Data Sistólica Diastólica MAP
+	dateStr := fields[1]
+	systolicStr := normalizeDecimal(fields[2])
+	diastolicStr := normalizeDecimal(fields[3])
+	mapStr := normalizeDecimal(fields[4])
+
+	date, err := time.Parse("02/01/2006", dateStr)
+	if err != nil {
+		return BPRecord{}, false, nil
+	}
+
+	systolic, err := strconv.ParseFloat(systolicStr, 64)
+	if err != nil {
+		return BPRecord{}, false, nil
+	}
+
+	diastolic, err := strconv.ParseFloat(diastolicStr, 64)
+	if err != nil {
+		return BPRecord{}, false, nil
+	}
+
+	mapVal, err := strconv.ParseFloat(mapStr, 64)
+	if err != nil {
+		return BPRecord{}, false, nil
+	}
+
+	return BPRecord{
+		CollectionDate: date.Format("2006-01-02"),
+		CollectionTime: nil,
+		Systolic:       systolic,
+		Diastolic:      diastolic,
+		MAP:            mapVal,
+		Source:         "bp_legacy",
+		PatientID:      patientID,
+	}, true, nil
+}
+
+func normalizeDecimal(s string) string {
+	return strings.ReplaceAll(strings.TrimSpace(s), ",", ".")
+}
